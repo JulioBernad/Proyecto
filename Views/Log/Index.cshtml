@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Proyecto.Models.Usuarios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Bienvenido</h2>
+    <div>
+    @using (Html.BeginForm("List", "Log", FormMethod.Post)) { 
+        <table class="table">
+            <tr>
+                <th>
+                    Usuario:
+                </th>
+                <th>
+                    @Html.TextBox("usuario")<input id="usuario" type="text" required/>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Contraseña:
+                </th>
+                <th>
+                    <input id="contrasena" type="password" />
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="submit" value="Iniciar Sesion"/>
+                </th>
+            </tr>
+        </table>
+    }
+        <p>
+            @Html.ActionLink("Registrate", "Create")
+        </p>
+    </div>
